@@ -29,9 +29,30 @@ class _ListaState extends State<Lista> {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
                     ),
-                    subtitle: Text(
-                      "${item['properties']['plazasRotatorias']} / ${item['properties']['libres']} plazas libres",
-                      style: const TextStyle(color: Colors.white),
+                    subtitle: RichText(
+                      text: TextSpan(children: [
+                        const WidgetSpan(
+                            child: Icon(
+                          Icons.local_parking_outlined,
+                          size: 16,
+                        )),
+                        TextSpan(
+                            text: " ${item['properties']['plazasRotatorias']}"),
+                        const TextSpan(text: " / "),
+                        TextSpan(children: [
+                          if (item['properties']['libres'] == "0") ...[
+                            TextSpan(
+                                text: item['properties']['libres'],
+                                style:
+                                    const TextStyle(color: Color(0xFFED8363)))
+                          ] else ...[
+                            TextSpan(
+                                text: item['properties']['libres'],
+                                style:
+                                    const TextStyle(color: Color(0xff63ED84)))
+                          ]
+                        ]),
+                      ]),
                     ),
                     onTap: () {},
                   ),
