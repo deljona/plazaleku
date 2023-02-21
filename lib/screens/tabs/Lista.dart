@@ -26,10 +26,13 @@ class _ListaState extends State<Lista> {
                     // NOMBRE PARKING
                     title: Text(
                       item['properties']['nombre'],
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     subtitle: Text(
-                        "${item['properties']['plazasRotatorias']} / ${item['properties']['libres']} plazas libres"),
+                      "${item['properties']['plazasRotatorias']} / ${item['properties']['libres']} plazas libres",
+                      style: const TextStyle(color: Colors.white),
+                    ),
                     onTap: () {},
                   ),
                 );
