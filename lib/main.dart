@@ -44,7 +44,7 @@ class _MainAppState extends State<MainApp> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: const Color(0xff2E4E5D),
-          // elevation: 0,
+          //elevation: 0,
           title: Center(
               child: Image.asset(
             "assets/images/logo.png",
@@ -72,12 +72,13 @@ class _MainAppState extends State<MainApp> {
                 ),
                 label: 'Guardados'),
             NavigationDestination(
-                icon: Icon(Icons.eco_outlined),
-                selectedIcon: Icon(Icons.eco_rounded),
+                icon: Icon(Icons.eco_outlined, color: Color(0xff63ED84)),
+                selectedIcon: Icon(Icons.eco_rounded, color: Color(0xff63ED84)),
                 label: 'Parkings'),
             NavigationDestination(
-                icon: Icon(Icons.settings_outlined),
-                selectedIcon: Icon(Icons.settings_rounded),
+                icon: Icon(Icons.settings_outlined, color: Color(0xffDAE2DF)),
+                selectedIcon:
+                    Icon(Icons.settings_rounded, color: Color(0xffDAE2DF)),
                 label: 'Ajustes'),
           ],
           selectedIndex: selectedIndex,
@@ -102,7 +103,7 @@ class _CallsPageState extends State<CallsPage> {
       length: 2,
       child: Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(80.0),
+            preferredSize: const Size.fromHeight(75.0),
             child: AppBar(
               bottom: const TabBar(
                 tabs: <Widget>[
