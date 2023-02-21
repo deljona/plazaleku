@@ -40,26 +40,36 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        // ENCABEZADO
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: const Color(0xff2E4E5D),
-          elevation: 0,
+          // elevation: 0,
           title: Center(
               child: Image.asset(
             "assets/images/logo.png",
-            scale: 3,
+            scale: 4,
           )),
         ),
+        // CUERPO
         body: IndexedStack(
           index: selectedIndex,
           children: pages,
         ),
+        // BOTONES DE NAVEGACIÓN
         bottomNavigationBar: NavigationBar(
           backgroundColor: const Color(0xff2E4E5D),
           elevation: 0,
           destinations: const <NavigationDestination>[
             NavigationDestination(
-                icon: Icon(Icons.favorite_outline_rounded),
-                selectedIcon: Icon(Icons.favorite_rounded),
+                icon: Icon(
+                  Icons.favorite_outline_rounded,
+                  color: Color(0xffF4ACB7),
+                ),
+                selectedIcon: Icon(
+                  Icons.favorite_rounded,
+                  color: Color(0xffF4ACB7),
+                ),
                 label: 'Guardados'),
             NavigationDestination(
                 icon: Icon(Icons.eco_outlined),
@@ -91,22 +101,23 @@ class _CallsPageState extends State<CallsPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xff2E4E5D),
-          flexibleSpace: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              TabBar(
-                tabs: [
-                  Tab(text: 'Lista'),
+        appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(80.0),
+            child: AppBar(
+              bottom: const TabBar(
+                tabs: <Widget>[
+                  Tab(
+                    text: 'Lista',
+                    icon: Icon(Icons.filter_list_sharp),
+                  ),
                   Tab(
                     text: 'Mapa',
+                    icon: Icon(Icons.map_sharp),
                   ),
                 ],
-              )
-            ],
-          ),
-        ),
+              ),
+              backgroundColor: const Color(0xff2E4E5D),
+            )),
         body: const TabBarView(
           children: [
             Lista(),
