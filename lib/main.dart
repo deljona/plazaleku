@@ -54,14 +54,21 @@ class _MainAppState extends State<MainApp> {
           children: pages,
         ),
         bottomNavigationBar: NavigationBar(
+          backgroundColor: const Color(0xff2E4E5D),
           elevation: 0,
           destinations: const <NavigationDestination>[
             NavigationDestination(
-                icon: Icon(Icons.favorite_rounded), label: 'Guardados'),
+                icon: Icon(Icons.favorite_outline_rounded),
+                selectedIcon: Icon(Icons.favorite_rounded),
+                label: 'Guardados'),
             NavigationDestination(
-                icon: Icon(Icons.local_parking_rounded), label: 'Parkings'),
+                icon: Icon(Icons.eco_outlined),
+                selectedIcon: Icon(Icons.eco_rounded),
+                label: 'Parkings'),
             NavigationDestination(
-                icon: Icon(Icons.settings_rounded), label: 'Ajustes'),
+                icon: Icon(Icons.settings_outlined),
+                selectedIcon: Icon(Icons.settings_rounded),
+                label: 'Ajustes'),
           ],
           selectedIndex: selectedIndex,
           onDestinationSelected: onItemTapped,
