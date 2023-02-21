@@ -45,7 +45,7 @@ class _MainAppState extends State<MainApp> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: const Color(0xff2E4E5D),
-          //elevation: 0,
+          elevation: 0,
           title: Center(
               child: Image.asset(
             "assets/images/logo.png",
