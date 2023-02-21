@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/physics.dart';
 import 'package:plazaleku/screens/tabs/Lista.dart';
 import 'package:plazaleku/screens/tabs/Mapa.dart';
 
@@ -42,6 +41,7 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           title: const Text('Plazaleku'),
         ),
         body: IndexedStack(
@@ -84,12 +84,9 @@ class _CallsPageState extends State<CallsPage> {
         appBar: AppBar(
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+            children: const [
               TabBar(
-                indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.greenAccent),
-                tabs: const [
+                tabs: [
                   Tab(text: 'Lista'),
                   Tab(
                     text: 'Mapa',
