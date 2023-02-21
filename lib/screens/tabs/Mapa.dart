@@ -10,6 +10,12 @@ class Mapa extends StatefulWidget {
 class _MapaState extends State<Mapa> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      alignment: Alignment.center,
+      child: const Icon(
+        Icons.map_rounded,
+        size: 40,
+      ),
+    );
   }
 }
