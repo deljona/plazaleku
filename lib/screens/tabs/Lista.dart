@@ -21,6 +21,7 @@ class _ListaState extends State<Lista> {
               itemBuilder: (context, index) {
                 var item = snapshot.data![index];
                 return Card(
+                  color: const Color(0xff2E4E5D),
                   child: ListTile(
                     // NOMBRE PARKING
                     title: Text(
