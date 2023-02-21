@@ -38,7 +38,10 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: const Color(0xff2E4E5D)),
+      theme: ThemeData(
+          colorScheme: const ColorScheme.dark(
+              primary: Colors.white, background: Color(0xff2E4E5D)),
+          useMaterial3: true),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // ENCABEZADO
@@ -109,15 +112,21 @@ class _CallsPageState extends State<CallsPage> {
               bottom: const TabBar(
                 indicatorColor: Color(0xffCFFFB0),
                 indicatorSize: TabBarIndicatorSize.tab,
-                indicatorWeight: 5,
+                indicatorWeight: 3,
                 tabs: <Widget>[
                   Tab(
                     text: 'Lista',
-                    icon: Icon(Icons.filter_list_sharp),
+                    icon: Icon(
+                      Icons.filter_list_sharp,
+                      color: Colors.white,
+                    ),
                   ),
                   Tab(
                     text: 'Mapa',
-                    icon: Icon(Icons.map_sharp),
+                    icon: Icon(
+                      Icons.map_sharp,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
