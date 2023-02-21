@@ -41,7 +41,10 @@ class _ListaState extends State<Lista> {
           } else if (snapshot.hasError) {
             return const Center(child: Text('Error'));
           } else {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: CircularProgressIndicator(
+              color: Color(0xff63ED84),
+            ));
           }
         },
       ),
