@@ -23,7 +23,12 @@ class _ListaState extends State<Lista> {
                 return Card(
                   child: ListTile(
                     // NOMBRE PARKING
-                    title: Text(item['properties']['nombre']),
+                    title: Text(
+                      item['properties']['nombre'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                        "${item['properties']['plazasRotatorias']} / ${item['properties']['libres']} plazas libres"),
                     onTap: () {},
                   ),
                 );

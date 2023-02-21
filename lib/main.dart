@@ -41,27 +41,30 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xff2E4E5D),
           elevation: 0,
-          title: const Text('Plazaleku'),
+          title: Center(
+              child: Image.asset(
+            "assets/images/logo.png",
+            scale: 3,
+          )),
         ),
         body: IndexedStack(
           index: selectedIndex,
           children: pages,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white10,
+        bottomNavigationBar: NavigationBar(
           elevation: 0,
-          iconSize: 32,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
+          destinations: const <NavigationDestination>[
+            NavigationDestination(
                 icon: Icon(Icons.favorite_rounded), label: 'Guardados'),
-            BottomNavigationBarItem(
+            NavigationDestination(
                 icon: Icon(Icons.local_parking_rounded), label: 'Parkings'),
-            BottomNavigationBarItem(
+            NavigationDestination(
                 icon: Icon(Icons.settings_rounded), label: 'Ajustes'),
           ],
-          currentIndex: selectedIndex,
-          onTap: onItemTapped,
+          selectedIndex: selectedIndex,
+          onDestinationSelected: onItemTapped,
         ),
       ),
     );
@@ -82,6 +85,7 @@ class _CallsPageState extends State<CallsPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xff2E4E5D),
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
