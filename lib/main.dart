@@ -40,7 +40,9 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       theme: ThemeData(
           colorScheme: const ColorScheme.dark(
-              primary: Colors.white, background: Color(0xff2E4E5D)),
+              primary: Colors.white,
+              background: Color(0xff2E4E5D),
+              secondary: Color.fromARGB(169, 102, 147, 168)),
           useMaterial3: true),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
