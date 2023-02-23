@@ -89,7 +89,10 @@ class _ListaState extends State<Lista> {
                       ),
                     ),
                     isThreeLine: true,
-                    onTap: () {},
+                    trailing: MaterialButton(
+                      onPressed: () {},
+                      child: const Icon(Icons.favorite_border_rounded),
+                    ),
                   ),
                 );
               },
