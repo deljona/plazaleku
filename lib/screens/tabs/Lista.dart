@@ -27,9 +27,7 @@ class _ListaState extends State<Lista> {
                     title: Text(
                       item['properties']['nombre'].toString().toUpperCase(),
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 16),
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     subtitle: Container(
                       padding: const EdgeInsets.all(25),
@@ -38,32 +36,31 @@ class _ListaState extends State<Lista> {
                           const WidgetSpan(
                               child: Icon(
                             Icons.local_parking_outlined,
-                            size: 16,
+                            size: 18,
                             color: Colors.white,
                           )),
                           TextSpan(
                               text:
-                                  " ${item['properties']['plazasRotatorias']}",
-                              style: const TextStyle(fontSize: 16)),
+                                  " ${item['properties']['plazasRotatorias']}"),
                           const TextSpan(text: " / "),
                           TextSpan(children: [
                             if (item['properties']['libres'] == "0") ...[
                               TextSpan(
                                   text: item['properties']['libres'],
-                                  style:
-                                      const TextStyle(color: Color(0xFFED8363)))
+                                  style: const TextStyle(
+                                      color: Color(0xFFED8363), fontSize: 16))
                             ] else ...[
                               TextSpan(
                                   text: item['properties']['libres'],
-                                  style:
-                                      const TextStyle(color: Color(0xff63ED84)))
+                                  style: const TextStyle(
+                                      color: Color(0xff63ED84), fontSize: 16))
                             ]
                           ]),
                           const TextSpan(text: "\n"),
                           const WidgetSpan(
                               child: Icon(
                             Icons.emoji_transportation_outlined,
-                            size: 16,
+                            size: 18,
                             color: Colors.white,
                           )),
                           TextSpan(children: [
@@ -73,14 +70,14 @@ class _ListaState extends State<Lista> {
                               TextSpan(
                                   text:
                                       " ${item['properties']['plazasResidentesLibres']}",
-                                  style:
-                                      const TextStyle(color: Color(0xFFED8363)))
+                                  style: const TextStyle(
+                                      color: Color(0xFFED8363), fontSize: 16))
                             ] else ...[
                               TextSpan(
                                   text:
                                       " ${item['properties']['plazasResidentesLibres']}",
-                                  style:
-                                      const TextStyle(color: Color(0xff63ED84)))
+                                  style: const TextStyle(
+                                      color: Color(0xff63ED84), fontSize: 16))
                             ]
                           ]),
                         ]),
