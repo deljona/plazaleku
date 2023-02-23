@@ -25,35 +25,69 @@ class _ListaState extends State<Lista> {
                   child: ListTile(
                     // NOMBRE PARKING
                     title: Text(
-                      item['properties']['nombre'],
+                      item['properties']['nombre'].toString().toUpperCase(),
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 16),
                     ),
-                    subtitle: RichText(
-                      text: TextSpan(children: [
-                        const WidgetSpan(
-                            child: Icon(
-                          Icons.local_parking_outlined,
-                          size: 16,
-                        )),
-                        TextSpan(
-                            text: " ${item['properties']['plazasRotatorias']}"),
-                        const TextSpan(text: " / "),
-                        TextSpan(children: [
-                          if (item['properties']['libres'] == "0") ...[
-                            TextSpan(
-                                text: item['properties']['libres'],
-                                style:
-                                    const TextStyle(color: Color(0xFFED8363)))
-                          ] else ...[
-                            TextSpan(
-                                text: item['properties']['libres'],
-                                style:
-                                    const TextStyle(color: Color(0xff63ED84)))
-                          ]
+                    subtitle: Container(
+                      padding: const EdgeInsets.all(25),
+                      child: RichText(
+                        text: TextSpan(children: [
+                          const WidgetSpan(
+                              child: Icon(
+                            Icons.local_parking_outlined,
+                            size: 16,
+                            color: Colors.white,
+                          )),
+                          TextSpan(
+                              text:
+                                  " ${item['properties']['plazasRotatorias']}",
+                              style: const TextStyle(fontSize: 16)),
+                          const TextSpan(text: " / "),
+                          TextSpan(children: [
+                            if (item['properties']['libres'] == "0") ...[
+                              TextSpan(
+                                  text: item['properties']['libres'],
+                                  style:
+                                      const TextStyle(color: Color(0xFFED8363)))
+                            ] else ...[
+                              TextSpan(
+                                  text: item['properties']['libres'],
+                                  style:
+                                      const TextStyle(color: Color(0xff63ED84)))
+                            ]
+                          ]),
+                          const TextSpan(text: "\n"),
+                          const WidgetSpan(
+                              child: Icon(
+                            Icons.emoji_transportation_outlined,
+                            size: 16,
+                            color: Colors.white,
+                          )),
+                          TextSpan(children: [
+                            if (item['properties']['plazasResidentesLibres']
+                                    .toString() ==
+                                "0") ...[
+                              TextSpan(
+                                  text:
+                                      " ${item['properties']['plazasResidentesLibres']}",
+                                  style:
+                                      const TextStyle(color: Color(0xFFED8363)))
+                            ] else ...[
+                              TextSpan(
+                                  text:
+                                      " ${item['properties']['plazasResidentesLibres']}",
+                                  style:
+                                      const TextStyle(color: Color(0xff63ED84)))
+                            ]
+                          ]),
                         ]),
-                      ]),
+                        softWrap: true,
+                      ),
                     ),
+                    isThreeLine: true,
                     onTap: () {},
                   ),
                 );
