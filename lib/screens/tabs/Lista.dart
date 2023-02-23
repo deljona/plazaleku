@@ -29,8 +29,8 @@ class _ListaState extends State<Lista> {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
                     ),
-                    subtitle: Container(
-                      padding: const EdgeInsets.all(25),
+                    subtitle: SizedBox(
+                      // padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                       child: RichText(
                         text: TextSpan(children: [
                           const WidgetSpan(
@@ -41,21 +41,24 @@ class _ListaState extends State<Lista> {
                           )),
                           TextSpan(
                               text:
-                                  " ${item['properties']['plazasRotatorias']}"),
-                          const TextSpan(text: " / "),
+                                  "   ${item['properties']['plazasRotatorias']}"),
+                          const TextSpan(text: " · "),
                           TextSpan(children: [
                             if (item['properties']['libres'] == "0") ...[
                               TextSpan(
                                   text: item['properties']['libres'],
                                   style: const TextStyle(
-                                      color: Color(0xFFED8363), fontSize: 16))
+                                      color: Colors.red, fontSize: 16))
                             ] else ...[
                               TextSpan(
                                   text: item['properties']['libres'],
                                   style: const TextStyle(
-                                      color: Color(0xff63ED84), fontSize: 16))
+                                      color: Color(0xff63ED84),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600))
                             ]
                           ]),
+                          const TextSpan(text: ' Plazas libres'),
                           const TextSpan(text: "\n"),
                           const WidgetSpan(
                               child: Icon(
@@ -69,17 +72,18 @@ class _ListaState extends State<Lista> {
                                 "0") ...[
                               TextSpan(
                                   text:
-                                      " ${item['properties']['plazasResidentesLibres']}",
+                                      "   ${item['properties']['plazasResidentesLibres']}",
                                   style: const TextStyle(
-                                      color: Color(0xFFED8363), fontSize: 16))
+                                      color: Colors.red, fontSize: 16))
                             ] else ...[
                               TextSpan(
                                   text:
-                                      " ${item['properties']['plazasResidentesLibres']}",
+                                      "   ${item['properties']['plazasResidentesLibres']}",
                                   style: const TextStyle(
                                       color: Color(0xff63ED84), fontSize: 16))
                             ]
                           ]),
+                          const TextSpan(text: ' Residente/s libres'),
                         ]),
                         softWrap: true,
                       ),
