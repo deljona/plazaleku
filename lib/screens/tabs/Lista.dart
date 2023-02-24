@@ -12,7 +12,7 @@ class _ListaState extends State<Lista> {
   late Future<List<dynamic>> futureParking;
 
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
     futureParking = fetchParking();
   }
