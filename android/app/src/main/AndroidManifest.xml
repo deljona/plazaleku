@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.plazaleku">
+    <!-- Required to fetch data from the internet. -->
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="plazaleku"
         android:name="${applicationName}"
@@ -31,6 +33,4 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    <!-- Required to fetch data from the internet. -->
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
