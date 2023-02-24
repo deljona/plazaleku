@@ -47,15 +47,12 @@ class _ListaState extends State<Lista> {
                             if (item['properties']['libres'] == "0") ...[
                               TextSpan(
                                   text: item['properties']['libres'],
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 16))
+                                  style: const TextStyle(color: Colors.red))
                             ] else ...[
                               TextSpan(
                                   text: item['properties']['libres'],
-                                  style: const TextStyle(
-                                      color: Color(0xff63ED84),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600))
+                                  style:
+                                      const TextStyle(color: Color(0xff63ED84)))
                             ]
                           ]),
                           const TextSpan(text: ' Plazas libres'),
@@ -73,14 +70,13 @@ class _ListaState extends State<Lista> {
                               TextSpan(
                                   text:
                                       "   ${item['properties']['plazasResidentesLibres']}",
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 16))
+                                  style: const TextStyle(color: Colors.red))
                             ] else ...[
                               TextSpan(
                                   text:
                                       "   ${item['properties']['plazasResidentesLibres']}",
-                                  style: const TextStyle(
-                                      color: Color(0xff63ED84), fontSize: 16))
+                                  style:
+                                      const TextStyle(color: Color(0xff63ED84)))
                             ]
                           ]),
                           const TextSpan(text: ' Residente/s libres'),
