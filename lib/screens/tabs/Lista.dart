@@ -29,6 +29,7 @@ class _ListaState extends State<Lista> {
               itemBuilder: (context, index) {
                 var item = snapshot.data![index];
                 return Card(
+                  color: const Color(0xff2E4E5D),
                   child: ListTile(
                     title: Text(item['properties']['nombre'].toString()),
                   ),
@@ -40,7 +41,11 @@ class _ListaState extends State<Lista> {
           }
 
           // By default, show a loading spinner.
-          return const CircularProgressIndicator();
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Color(0xff63ED84),
+            ),
+          );
         },
       ),
     );
