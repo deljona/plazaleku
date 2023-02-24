@@ -30,9 +30,8 @@ class _ListaState extends State<Lista> {
                 var item = snapshot.data![index];
                 return Card(
                   color: const Color(0xff2E4E5D),
-                  child: ListTile(
-                    title: Text(item['properties']['nombre'].toString()),
-                  ),
+                  child:
+                      ListTile(title: Text("${item['properties']['nombre']}")),
                 );
               },
             );
