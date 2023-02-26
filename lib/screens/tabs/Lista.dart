@@ -76,7 +76,9 @@ class _ListaState extends State<Lista> {
                                         fontSize: 16)
                                     : const TextStyle(
                                         color: Color(0xffCFFFB0), fontSize: 16),
-                              )
+                              ),
+                              const SizedBox(width: 10),
+                              const Text('Públicas libres')
                             ],
                           ),
                           const SizedBox(height: 1),
@@ -100,7 +102,9 @@ class _ListaState extends State<Lista> {
                                         fontSize: 16)
                                     : const TextStyle(
                                         color: Color(0xffCFFFB0), fontSize: 16),
-                              )
+                              ),
+                              const SizedBox(width: 10),
+                              const Text('Residentes libres')
                             ],
                           ),
                           const SizedBox(height: 22),
@@ -129,6 +133,21 @@ class _ListaState extends State<Lista> {
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white),
                               ),
+                              const Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.info_outline),
+                                iconSize: 18,
+                              ),
+                              Text(
+                                (item['properties']['precios'][0] == "")
+                                    ? 'N/A'
+                                    : '${item['properties']['precios'][0]} €',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                              const SizedBox(width: 5),
+                              const Text("/ 15'")
                             ],
                           )
                         ],
