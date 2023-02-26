@@ -48,7 +48,30 @@ class _ListaState extends State<Lista> {
                                 icon: const Icon(
                                   Icons.favorite_outline_rounded,
                                   color: Color(0xffF4ACB7),
+                                  size: 26,
                                 ),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.local_parking_sharp,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                "${item['properties']['plazasRotatorias']} / ",
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                (item['properties']['libres'] == "0")
+                                    ? "${item['properties']['libres']}"
+                                    : "${item['properties']['libres']}",
+                                style: (item['properties']['libres'] == "0")
+                                    ? const TextStyle(
+                                        color: Color.fromARGB(255, 184, 97, 91))
+                                    : const TextStyle(color: Color(0xffCFFFB0)),
                               )
                             ],
                           )
