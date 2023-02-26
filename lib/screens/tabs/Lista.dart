@@ -41,7 +41,7 @@ class _ListaState extends State<Lista> {
                               Text(
                                 "${item['properties']['nombre']}".toUpperCase(),
                                 style: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
+                                    fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               const Spacer(),
                               IconButton(
@@ -104,15 +104,16 @@ class _ListaState extends State<Lista> {
                             ],
                           ),
                           const SizedBox(height: 22),
+                          // BOTONES Y PRECIO
                           Row(
                             children: [
-                              OutlinedButton(
+                              IconButton(
+                                icon: const Icon(Icons.phone),
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
                                   side: const BorderSide(
                                       color: Color(0xffCFFFB0)),
                                 ),
-                                child: const Text('Contactar'),
                               ),
                               const SizedBox(width: 13),
                               ElevatedButton.icon(
@@ -122,7 +123,7 @@ class _ListaState extends State<Lista> {
                                   color: Color(0xff63ED84),
                                 ),
                                 label: const Text(
-                                  'Go!',
+                                  'Cómo llegar',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 style: ElevatedButton.styleFrom(
