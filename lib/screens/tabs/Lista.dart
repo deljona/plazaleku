@@ -134,8 +134,22 @@ class _ListaState extends State<Lista> {
                                     backgroundColor: Colors.white),
                               ),
                               const Spacer(),
+                              // BOTÓN INFORMATIVO SOBRE LOS PRECIOS
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () => showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) => Dialog(
+                                            child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              detallePrecios(item)
+                                            ],
+                                          ),
+                                        ))),
                                 icon: const Icon(Icons.info_outline),
                                 iconSize: 18,
                               ),
@@ -168,5 +182,54 @@ class _ListaState extends State<Lista> {
         },
       ),
     );
+  }
+
+  DataTable detallePrecios(item) {
+    for (var i = 0; i < 10; i++) {}
+    return DataTable(columns: const [
+      DataColumn(label: Text('Tiempo')),
+      DataColumn(label: Text('Precio'))
+    ], rows: [
+      DataRow(cells: [
+        const DataCell(Text("15'")),
+        DataCell(Text("${item['properties']['precios'][0]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("30'")),
+        DataCell(Text("${item['properties']['precios'][1]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("1h")),
+        DataCell(Text("${item['properties']['precios'][2]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("1h 30'")),
+        DataCell(Text("${item['properties']['precios'][3]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("2h")),
+        DataCell(Text("${item['properties']['precios'][4]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("3h")),
+        DataCell(Text("${item['properties']['precios'][5]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("5h")),
+        DataCell(Text("${item['properties']['precios'][6]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("9h")),
+        DataCell(Text("${item['properties']['precios'][7]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("12h")),
+        DataCell(Text("${item['properties']['precios'][8]} €")),
+      ]),
+      DataRow(cells: [
+        const DataCell(Text("+ 14h")),
+        DataCell(Text("${item['properties']['precios'][9]} €")),
+      ]),
+    ]);
   }
 }
