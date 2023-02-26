@@ -154,14 +154,14 @@ class _ListaState extends State<Lista> {
                                 iconSize: 18,
                               ),
                               Text(
-                                (item['properties']['precios'][0] == "")
+                                (item['properties']['precios'][4] == "")
                                     ? 'N/A'
-                                    : '${item['properties']['precios'][0]} €',
+                                    : '${item['properties']['precios'][4]} €',
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
                               const SizedBox(width: 5),
-                              const Text("/ 15'")
+                              const Text("/ 2h")
                             ],
                           )
                         ],
