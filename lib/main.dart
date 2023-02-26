@@ -78,8 +78,8 @@ class _MainAppState extends State<MainApp> {
                 ),
                 label: 'Guardados'),
             NavigationDestination(
-                icon: Icon(Icons.eco_outlined, color: Color(0xff63ED84)),
-                selectedIcon: Icon(Icons.eco_rounded, color: Color(0xff63ED84)),
+                icon: Icon(Icons.explore_outlined, color: Color(0xff63ED84)),
+                selectedIcon: Icon(Icons.explore, color: Color(0xff63ED84)),
                 label: 'Parkings'),
             NavigationDestination(
                 icon: Icon(Icons.settings_outlined, color: Color(0xffDAE2DF)),
