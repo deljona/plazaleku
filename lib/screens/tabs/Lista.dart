@@ -12,7 +12,7 @@ class _ListaState extends State<Lista> {
   late Future<List<dynamic>> futureParking;
 
   @override
-  Future<void> initState() async {
+  initState() {
     super.initState();
     futureParking = fetchParking();
   }
@@ -29,10 +29,32 @@ class _ListaState extends State<Lista> {
               itemBuilder: (context, index) {
                 var item = snapshot.data![index];
                 return Card(
-                  color: const Color(0xff2E4E5D),
-                  child:
-                      ListTile(title: Text("${item['properties']['nombre']}")),
-                );
+                    shape: const RoundedRectangleBorder(),
+                    color: const Color(0xff2E4E5D),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "${item['properties']['nombre']}".toUpperCase(),
+                                style: const TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                              const Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.favorite_outline_rounded,
+                                  color: Color(0xffF4ACB7),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ));
               },
             );
           } else if (snapshot.hasError) {
