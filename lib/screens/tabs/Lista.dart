@@ -185,7 +185,6 @@ class _ListaState extends State<Lista> {
   }
 
   DataTable detallePrecios(item) {
-    for (var i = 0; i < 10; i++) {}
     return DataTable(columns: const [
       DataColumn(label: Text('Tiempo')),
       DataColumn(label: Text('Precio'))

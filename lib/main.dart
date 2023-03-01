@@ -102,9 +102,11 @@ class CallsPage extends StatefulWidget {
   State<CallsPage> createState() => _CallsPageState();
 }
 
-class _CallsPageState extends State<CallsPage> {
+class _CallsPageState extends State<CallsPage>
+    with AutomaticKeepAliveClientMixin<CallsPage> {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -143,4 +145,7 @@ class _CallsPageState extends State<CallsPage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
