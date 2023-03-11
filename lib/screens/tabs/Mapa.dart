@@ -12,7 +12,7 @@ class Mapa extends StatefulWidget {
 class _MapaState extends State<Mapa> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(43.31158420590418, -1.986386832343013);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -25,7 +25,7 @@ class _MapaState extends State<Mapa> {
       onMapCreated: _onMapCreated,
       initialCameraPosition: CameraPosition(
         target: _center,
-        zoom: 11.0,
+        zoom: 14.0,
       ),
     ));
   }
