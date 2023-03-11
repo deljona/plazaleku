@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:plazaleku/connection/net_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Lista extends StatefulWidget {
   const Lista({super.key});
@@ -28,6 +31,7 @@ class _ListaState extends State<Lista> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 var item = snapshot.data![index];
+                var listmp = snapshot.data!.asMap();
                 return Card(
                     shape: const RoundedRectangleBorder(),
                     color: const Color(0xff2E4E5D),
@@ -115,7 +119,11 @@ class _ListaState extends State<Lista> {
                             children: [
                               ElevatedButton.icon(
                                 // Lleva al usuario a Google Maps para empezar la ruta
-                                onPressed: () {},
+                                // Los datos del propio JSON ofrecido por el Open Data son erróneos.....
+                                onPressed: () {
+                                  launchURL(item['geometry']['coordinates'][0],
+                                      item['geometry']['coordinates'][1]);
+                                },
                                 icon: const Icon(
                                   Icons.eco_rounded,
                                   color: Color(0xff63ED84),
@@ -224,5 +232,22 @@ class _ListaState extends State<Lista> {
         DataCell(Text("${item['properties']['precios'][9]} €")),
       ]),
     ]);
+  }
+
+  launchURL(double lat, double lng) async {
+    String homeLat = lat.toString();
+    String homeLng = lng.toString();
+
+    final String googleMapslocationUrl =
+        "https://www.google.com/maps/search/?api=1&query=$homeLat,$homeLng";
+
+    final Uri encodedURl = Uri.parse(googleMapslocationUrl);
+    await launchUrl(encodedURl);
+
+    if (await canLaunchUrl(encodedURl)) {
+      await launchUrl(encodedURl);
+    } else {
+      throw 'Could not launch $encodedURl';
+    }
   }
 }
