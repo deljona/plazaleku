@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plazaleku/screens/notas.dart';
 import 'package:plazaleku/screens/tabs/Lista.dart';
 import 'package:plazaleku/screens/tabs/Mapa.dart';
 
@@ -24,10 +25,7 @@ class _MainAppState extends State<MainApp> {
   }
 
   static const List<Widget> pages = <Widget>[
-    Icon(
-      Icons.favorite_rounded,
-      size: 150,
-    ),
+    NotasPage(),
     CallsPage(),
     Center(
       child: Icon(
@@ -78,7 +76,7 @@ class _MainAppState extends State<MainApp> {
                   Icons.favorite_rounded,
                   color: Color(0xffF4ACB7),
                 ),
-                label: 'Guardados'),
+                label: 'Mis notas'),
             NavigationDestination(
                 icon: Icon(Icons.explore_outlined, color: Color(0xff63ED84)),
                 selectedIcon: Icon(Icons.explore, color: Color(0xff63ED84)),
@@ -97,6 +95,7 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
+// PARA CREAR LA NAVEGACIÓN ENTRE LAS TABS
 class CallsPage extends StatefulWidget {
   const CallsPage({super.key});
 
