@@ -114,6 +114,7 @@ class _ListaState extends State<Lista> {
                           Row(
                             children: [
                               ElevatedButton.icon(
+                                // Lleva al usuario a Google Maps para empezar la ruta
                                 onPressed: () {},
                                 icon: const Icon(
                                   Icons.eco_rounded,
