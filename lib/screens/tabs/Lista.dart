@@ -44,6 +44,7 @@ class _ListaState extends State<Lista> {
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               const Spacer(),
+                              /*
                               IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
@@ -52,6 +53,7 @@ class _ListaState extends State<Lista> {
                                   size: 26,
                                 ),
                               )
+                              */
                             ],
                           ),
                           // PLAZAS PÚBLICAS DISPONIBLES
@@ -111,15 +113,6 @@ class _ListaState extends State<Lista> {
                           // BOTONES Y PRECIO
                           Row(
                             children: [
-                              IconButton(
-                                icon: const Icon(Icons.phone),
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                  side: const BorderSide(
-                                      color: Color(0xffCFFFB0)),
-                                ),
-                              ),
-                              const SizedBox(width: 13),
                               ElevatedButton.icon(
                                 onPressed: () {},
                                 icon: const Icon(
@@ -151,7 +144,7 @@ class _ListaState extends State<Lista> {
                                           ),
                                         ))),
                                 icon: const Icon(Icons.info_outline),
-                                iconSize: 18,
+                                iconSize: 20,
                               ),
                               Text(
                                 (item['properties']['precios'][4] == "")

@@ -29,9 +29,11 @@ class _MainAppState extends State<MainApp> {
       size: 150,
     ),
     CallsPage(),
-    Icon(
-      Icons.settings_rounded,
-      size: 150,
+    Center(
+      child: Icon(
+        Icons.settings_rounded,
+        size: 150,
+      ),
     ),
   ];
 
