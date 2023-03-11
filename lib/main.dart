@@ -24,6 +24,7 @@ class _MainAppState extends State<MainApp> {
     });
   }
 
+  // Lista de páginas
   static const List<Widget> pages = <Widget>[
     NotasPage(),
     CallsPage(),
